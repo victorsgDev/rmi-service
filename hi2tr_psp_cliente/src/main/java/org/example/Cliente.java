@@ -15,7 +15,7 @@ public class Cliente {
             System.out.println("Hemos obtenido el registro");
             JugadorInterfaceRMI plantilla = (JugadorInterfaceRMI) registry.lookup("miPlantilla");
             System.out.println("Hemos obtenido el objeto remoto");
-            System.out.println(); // Retorno de carro.
+            System.out.println();
             String buscado;
             String opcion;
             do {
