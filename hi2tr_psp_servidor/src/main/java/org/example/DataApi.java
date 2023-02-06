@@ -8,18 +8,52 @@ import java.util.Objects;
 
 @FunctionalInterface
 public interface DataApi {
-
-    String getData(String arg);
     ArrayList<Jugador> plantilla = receiveData();
     ArrayList<Jugador> dataToReturn = new ArrayList<>();
+
+    String getData(String arg);
+
     static DataApi byName() {
-
+        dataToReturn.clear();
         return arg -> {
-
-
+            plantilla.stream().filter(jugador -> jugador.getNombre().equals(arg)).forEach(dataToReturn::add);
+            return dataToReturn.toString();
         };
-
     }
+
+    static DataApi byPosition() {
+        dataToReturn.clear();
+        return arg -> {
+            plantilla.stream().filter(jugador -> jugador.getPosicion().equals(arg)).forEach(dataToReturn::add);
+            return dataToReturn.toString();
+        };
+    }
+
+    static DataApi byClub() {
+        dataToReturn.clear();
+        return arg -> {
+            plantilla.stream().filter(jugador -> jugador.getClub().equals(arg)).forEach(dataToReturn::add);
+            return dataToReturn.toString();
+        };
+    }
+
+    static DataApi byDorsal() {
+        dataToReturn.clear();
+        return arg -> {
+            plantilla.stream().filter(jugador -> jugador.getDorsal().equals(arg)).forEach(dataToReturn::add);
+            return dataToReturn.toString();
+        };
+    }
+
+    static DataApi byNationality() {
+        dataToReturn.clear();
+        return arg -> {
+            plantilla.stream().filter(jugador -> jugador.getNacionalidad().equals(arg)).forEach(dataToReturn::add);
+            return dataToReturn.toString();
+        };
+    }
+
+
 
     static ArrayList<Jugador> receiveData() {
         // Abrirfichero para lectura

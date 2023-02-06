@@ -24,27 +24,27 @@ public class JugadorRMI extends UnicastRemoteObject implements JugadorInterfaceR
 
     @Override
     public String buscarNombre(String nombre) throws RemoteException {
-        return null;
+        return DataApi.byName().getData(nombre);
     }
 
     @Override
     public String buscarPosicion(String posicion) throws RemoteException {
-        return null;
+        return DataApi.byPosition().getData(posicion);
     }
 
     @Override
     public String buscarClub(String club) throws RemoteException {
-        return null;
+        return DataApi.byClub().getData(club);
     }
 
     @Override
     public String buscarDorsal(String dorsal) throws RemoteException {
-        return null;
+        return DataApi.byDorsal().getData(dorsal);
     }
 
     @Override
     public String buscarNacionalidad(String nacionalidad) throws RemoteException {
-        return null;
+        return DataApi.byNationality().getData(nacionalidad);
     }
 }
 
